@@ -1,0 +1,20 @@
+{
+  "name": "thanh-lap-cong-ty-chuan-luat",
+  "version": "1.0.0",
+  "description": "Landing Page Dịch Vụ Thành Lập Doanh Nghiệp Trọn Gói - Kế Toán Thuế Chuẩn Luật",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/lead_test.js && node test/page_test.js",
+    "sync-packages": "node scripts/sync-packages.js"
+  },
+  "keywords": [
+    "thanh-lap-cong-ty",
+    "ke-toan-thue",
+    "chuẩn-luật",
+    "landing-page",
+    "cro"
+  ],
+  "author": "CÔNG TY TNHH KẾ TOÁN THUẾ CHUẨN LUẬT",
+  "license": "ISC"
+}

@@ -1,0 +1,247 @@
+/* Custom Styles for Kế Toán Thuế Chuẩn Luật Landing Page - Logo Synergized Theme */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #166534;        /* Deep Forest Green - logo 'chuan' */
+  --primary-dark: #14532d;   /* Dark Forest Green */
+  --primary-darker: #052e16; /* Deepest Forest */
+  --leaf-green: #70a92b;     /* Fresh Leaf Green - logo 'uat' */
+  --leaf-light: #84cc16;     /* Vibrant Spring Green */
+  --accent-orange: #ea580c;  /* Warm Orange - left scale */
+  --accent-red: #dc2626;     /* Vermilion Red - right scale */
+  --accent-subtext: #c2410c; /* Subtitle 'Accounting - Tax - Law' */
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #1e293b;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Anti-zoom & Anti-jumping on mobile inputs and selects */
+@media screen and (max-width: 768px) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  input, select, textarea {
+    font-size: 16px !important;
+    touch-action: manipulation;
+  }
+}
+
+/* Animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(22, 101, 52, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(22, 101, 52, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(22, 101, 52, 0);
+  }
+}
+
+@keyframes shake-anim {
+  0%, 100% { transform: rotate(0deg); }
+  20%, 60% { transform: rotate(-12deg); }
+  40%, 80% { transform: rotate(12deg); }
+}
+
+.pulse-call-btn {
+  animation: pulse-ring 2s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.shake-icon {
+  animation: shake-anim 2.5s infinite ease-in-out;
+}
+
+/* Logo Color Matched Gradients */
+.text-gradient {
+  background: linear-gradient(135deg, #14532d 0%, #166534 40%, #15803d 70%, #70a92b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* Best Seller Badge with Logo Scales Gradient */
+.badge-popular {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #ea580c 0%, #dc2626 100%);
+  color: #ffffff;
+  padding: 5px 18px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+  border: 1px solid rgba(254, 205, 211, 0.6);
+  white-space: nowrap;
+}
+
+/* Accordion details/summary styles */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] summary .faq-icon {
+  transform: rotate(180deg);
+}
+
+details[open] {
+  border-color: #86efac;
+  box-shadow: 0 4px 12px rgba(22, 101, 52, 0.06);
+}
+
+/* Toast Notification */
+#social-proof-toast {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#social-proof-toast.hide-toast {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+}
+
+#social-proof-toast.show-toast {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Mobile Sticky Bottom Safe Area */
+@supports (padding: max(0px)) {
+  .safe-bottom {
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #166534;
+}
+
+/* Section Divider Subtle Waves */
+.bg-pattern-grid {
+  background-image: radial-gradient(rgba(22, 101, 52, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Hero Prestige Background & Ambient Executive Lighting */
+.hero-prestige-bg {
+  background-color: #052e16;
+  background-image: 
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(22, 101, 52, 0.75), transparent 70%),
+    radial-gradient(circle at 12% 35%, rgba(112, 169, 43, 0.22), transparent 45%),
+    radial-gradient(circle at 88% 65%, rgba(234, 88, 12, 0.16), transparent 45%),
+    linear-gradient(180deg, #052e16 0%, #073b1d 35%, #0b4523 70%, #062b16 100%);
+}
+
+.hero-luxury-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Frosted Glass Cards on Dark Executive Background */
+.glass-frost-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.glass-frost-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(132, 204, 22, 0.45);
+}
+
+/* Hero Slider Transitions */
+.hero-slide {
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-slide.active-slide {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-slide.inactive-slide {
+  display: none;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.slider-tab-btn {
+  transition: all 0.25s ease;
+}
+
+.slider-tab-btn.active-tab {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(132, 204, 22, 0.6);
+  color: #ffffff;
+}
+
+/* Legal Security Guilloche Watermark Patterns (Hiệu ứng bảo chứng pháp lý) */
+.bg-pattern-guilloche {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60' viewBox='0 0 120 60' fill='none' stroke='%23166534' stroke-width='0.75' opacity='0.045'%3E%3Cpath d='M 0 30 Q 30 10, 60 30 T 120 30'/%3E%3Cpath d='M 0 30 Q 30 50, 60 30 T 120 30'/%3E%3Cpath d='M 0 20 Q 30 0, 60 20 T 120 20'/%3E%3Cpath d='M 0 40 Q 30 60, 60 40 T 120 40'/%3E%3Cpath d='M 0 10 Q 30 -10, 60 10 T 120 10'/%3E%3Cpath d='M 0 50 Q 30 70, 60 50 T 120 50'/%3E%3C/svg%3E");
+  background-size: 120px 60px;
+}
+
+.bg-pattern-guilloche-dark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60' viewBox='0 0 120 60' fill='none' stroke='%2384cc16' stroke-width='0.75' opacity='0.035'%3E%3Cpath d='M 0 30 Q 30 10, 60 30 T 120 30'/%3E%3Cpath d='M 0 30 Q 30 50, 60 30 T 120 30'/%3E%3Cpath d='M 0 20 Q 30 0, 60 20 T 120 20'/%3E%3Cpath d='M 0 40 Q 30 60, 60 40 T 120 40'/%3E%3Cpath d='M 0 10 Q 30 -10, 60 10 T 120 10'/%3E%3Cpath d='M 0 50 Q 30 70, 60 50 T 120 50'/%3E%3C/svg%3E");
+  background-size: 120px 60px;
+}

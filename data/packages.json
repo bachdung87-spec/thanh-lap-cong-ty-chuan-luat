@@ -1,0 +1,68 @@
+[
+  {
+    "id": "co-ban",
+    "name": "Gói Khởi Sự Cơ Bản",
+    "tagline": "Dành Cho Ai Đã Có CKS/Kế Toán",
+    "description": "Đủ để có pháp nhân, mã số thuế và con dấu tròn để ký hợp đồng mở tài khoản.",
+    "price": 1500000,
+    "priceDisplay": "1.500.000",
+    "priceUnit": "đ",
+    "priceNote": "✓ Đã gồm lệ phí nộp nhà nước • Chưa VAT",
+    "isPopular": false,
+    "popularBadge": "",
+    "ctaText": "Đăng Ký Gói Cơ Bản",
+    "buttonClass": "bg-slate-100 hover:bg-slate-200 text-slate-800",
+    "features": [
+      { "text": "Tư vấn loại hình, tên, địa chỉ, ngành nghề, vốn", "highlight": false },
+      { "text": "Soạn thảo trọn bộ hồ sơ và điều lệ công ty", "highlight": false },
+      { "text": "Giấy phép kinh doanh (GPKD) + Mã số thuế", "highlight": true },
+      { "text": "Dấu tròn doanh nghiệp loại tốt", "highlight": true },
+      { "text": "Đăng công bố thông tin trên Cổng quốc gia", "highlight": false },
+      { "text": "Hỗ trợ mở tài khoản ngân hàng số đẹp tận nơi", "highlight": false }
+    ]
+  },
+  {
+    "id": "van-hanh",
+    "name": "Gói Vận Hành Chuẩn",
+    "tagline": "Đầy Đủ Để Xuất Hóa Đơn & Vận Hành Ngay",
+    "description": "Giải pháp hoàn chỉnh nhất. Doanh nghiệp đi vào kinh doanh và xuất hóa đơn ngay mà không lo thủ tục thuế ban đầu.",
+    "price": 3790000,
+    "priceDisplay": "3.790.000",
+    "priceUnit": "đ",
+    "priceNote": "✓ Tiết kiệm 2.450.000đ so với mua lẻ từng món",
+    "isPopular": true,
+    "popularBadge": "⭐ ĐƯỢC CHỌN NHIỀU NHẤT (85%)",
+    "ctaText": "CHỌN GÓI VẬN HÀNH CHUẨN",
+    "buttonClass": "bg-gradient-to-r from-orange-600 via-accent-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white shadow-lg shadow-orange-600/30",
+    "features": [
+      { "text": "Toàn bộ quyền lợi của Gói Cơ Bản (GPKD + Dấu tròn)", "highlight": true },
+      { "text": "Chữ ký số USB Token thời hạn 3 NĂM (Trị giá 1.800.000đ)", "highlight": true, "box": "brand" },
+      { "text": "Tặng 1.500 số Hóa đơn điện tử + Đăng ký cơ quan Thuế", "highlight": true, "box": "brand" },
+      { "text": "Khắc 01 Dấu chức danh Giám đốc / Đại diện pháp luật", "highlight": false },
+      { "text": "Làm Biển công ty chất liệu Mica cao cấp (25x35cm)", "highlight": false },
+      { "text": "Miễn phí kê khai thuế ban đầu & Báo cáo thuế quý 1", "highlight": true },
+      { "text": "Tư vấn pháp lý & chính sách miễn thuế TNDN 3 năm", "highlight": false }
+    ]
+  },
+  {
+    "id": "vip",
+    "name": "Gói Toàn Diện VIP",
+    "tagline": "Đồng Hành Kế Toán & Pháp Lý Dài Hạn",
+    "description": "Chủ doanh nghiệp chỉ tập trung bán hàng và phát triển, Chuẩn Luật lo trọn vẹn toàn bộ sổ sách thuế kế toán.",
+    "price": 5490000,
+    "priceDisplay": "5.490.000",
+    "priceUnit": "đ",
+    "priceNote": "✓ Tặng 06 tháng Dịch vụ Kế Toán Trọn Gói",
+    "isPopular": false,
+    "popularBadge": "",
+    "ctaText": "Đăng Ký Gói Toàn Diện VIP",
+    "buttonClass": "bg-slate-100 hover:bg-slate-200 text-slate-800",
+    "features": [
+      { "text": "Toàn bộ quyền lợi của Gói Vận Hành Chuẩn", "highlight": true },
+      { "text": "06 Tháng Kế toán thuế trọn gói miễn phí", "highlight": true, "box": "gold" },
+      { "text": "Tư vấn đăng ký bảo hộ độc quyền nhãn hiệu / thương hiệu", "highlight": false },
+      { "text": "Bộ mẫu hợp đồng lao động, nội quy công ty chuẩn luật", "highlight": false },
+      { "text": "Hỗ trợ tư vấn tối ưu chi phí thuế thu nhập doanh nghiệp", "highlight": false }
+    ]
+  }
+]
