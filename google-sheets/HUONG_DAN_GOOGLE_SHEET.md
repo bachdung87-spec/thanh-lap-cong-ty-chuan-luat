@@ -1,10 +1,27 @@
-# HƯỚNG DẪN KẾT NỐI BẮN LEAD VỀ GOOGLE SHEET (2 PHÚT)
+# HƯỚNG DẪN KẾT NỐI BẮN LEAD VỀ GOOGLE SHEET (CHUẨN HOÁ 10 CỘT)
 
-Hệ thống Landing Page của **Kế Toán Thuế Chuẩn Luật** đã được lập trình sẵn sàng để tự động đẩy thông tin khách hàng đăng ký (Lead) trực tiếp vào file Google Sheet của bạn theo thời gian thực.
+Hệ thống Landing Page của **Kế Toán Thuế Chuẩn Luật** tự động đồng bộ mọi khách hàng đăng ký (Lead) vào Google Sheet theo đúng thứ tự 10 cột chuẩn hoá tối ưu cho quy trình Telesale và Marketing.
 
 ---
 
-## 5 BƯỚC THIẾT LẬP NHANH CHÓNG
+## 📋 THỨ TỰ 10 CỘT CHUẨN HOÁ TRONG GOOGLE SHEET:
+
+| Cột | Tên Cột | Mô tả | Định dạng hiển thị |
+|:---:|---|---|:---:|
+| **A** | **STT** | Số thứ tự tăng dần tự động (1, 2, 3...) | Căn giữa |
+| **B** | **Thời gian** | Ngày giờ khách gửi form (dd/MM/yyyy HH:mm:ss GMT+7) | Căn giữa |
+| **C** | **Họ và tên** | Tên khách hàng đăng ký | Căn trái |
+| **D** | **Số điện thoại** | SĐT/Zalo khách hàng (giữ số 0 đầu) | Căn giữa |
+| **E** | **Gói quan tâm** | Gói dịch vụ đã chọn (Cơ bản, Vận hành, VIP...) | Căn trái |
+| **F** | **Nhu cầu / Ngành nghề** | Ngành nghề dự kiến kinh doanh, tên công ty hoặc ghi chú | Căn trái |
+| **G** | **Trạng thái gọi** | Mặc định: `Chưa liên hệ` (Chuyên viên đổi thành *Đã gọi*, *Hẹn gọi lại*, *Chốt hợp đồng*...) | Căn giữa |
+| **H** | **Ghi chú Telesale** | **Cột để trống** để chuyên viên ghi lại nội dung tư vấn | Căn trái |
+| **I** | **Nguồn (UTM Source)** | Nguồn khách (Facebook Ads, Google Ads, TikTok, Zalo, Direct) | Căn giữa |
+| **J** | **Chiến dịch (UTM Campaign)** | Tên chiến dịch quảng cáo | Căn giữa |
+
+---
+
+## 5 BƯỚC THIẾT LẬP NHANH CHÓNG (2 PHÚT)
 
 ### Bước 1: Mở Google Sheet
 1. Truy cập [Google Sheets](https://sheets.google.com) và tạo một bảng tính mới.
@@ -12,58 +29,22 @@ Hệ thống Landing Page của **Kế Toán Thuế Chuẩn Luật** đã đư�
 
 ### Bước 2: Mở trình chỉnh sửa Apps Script
 1. Trên menu trên cùng của Google Sheet, bấm vào **Tiện ích mở rộng** (*Extensions*) $\rightarrow$ chọn **Apps Script**.
-2. Một tab mới sẽ mở ra trình soạn thảo mã nguồn.
 
-### Bước 3: Dán đoạn mã có sẵn
-1. Xóa toàn bộ đoạn mã mẫu mặc định (`function myFunction() {...}`).
-2. Mở file [google-sheets/Code.gs](file:///Users/dungbv/Documents/ThanhLapCongty/google-sheets/Code.gs) trong dự án này, copy toàn bộ nội dung và dán vào Apps Script.
+### Bước 3: Dán đoạn mã chuẩn hoá
+1. Xóa hết code mẫu mặc định.
+2. Mở file [google-sheets/Code.gs](file:///Users/dungbv/Documents/ThanhLapCongty/google-sheets/Code.gs) trong dự án, copy toàn bộ nội dung và dán vào.
 3. Bấm biểu tượng **Lưu (Save / Ctrl + S)**.
 
 ### Bước 4: Triển khai thành Web App (Deploy)
 1. Ở góc trên bên phải, bấm nút **Triển khai (Deploy)** $\rightarrow$ chọn **Tùy chọn triển khai mới (New deployment)**.
-2. Tại mục *Chọn loại (Select type)*, bấm biểu tượng bánh răng ⚙️ $\rightarrow$ chọn **Ứng dụng web (Web app)**.
-3. Điền các trường như sau:
-   - **Mô tả (Description)**: `Webhook Chuẩn Luật Leads`
+2. Bấm biểu tượng bánh răng ⚙️ $\rightarrow$ chọn **Ứng dụng web (Web app)**:
+   - **Mô tả (Description)**: `Webhook Chuẩn Luật 10 Cột`
    - **Thực thi dưới tên (Execute as)**: **Tôi (Địa chỉ email của bạn)**
-   - **Ai có quyền truy cập (Who has access)**: **Bất kỳ ai (Anyone)** *(Rất quan trọng để form từ website gửi dữ liệu vào được)*.
-4. Bấm **Triển khai (Deploy)**.
-5. Nếu Google hỏi quyền truy cập:
-   - Bấm *Ủy quyền truy cập (Authorize access)* $\rightarrow$ Chọn tài khoản Google của bạn $\rightarrow$ Bấm *Nâng cao (Advanced)* $\rightarrow$ Bấm *Đi tới [Tên dự án] (Không an toàn)* $\rightarrow$ Bấm *Cho phép (Allow)*.
-6. Sau khi hoàn thành, bạn sẽ nhận được một đường link dạng:
+   - **Ai có quyền truy cập (Who has access)**: **Bất kỳ ai (Anyone)** *(Bắt buộc chọn Anyone)*.
+3. Bấm **Triển khai (Deploy)** $\rightarrow$ Bấm *Ủy quyền truy cập* $\rightarrow$ Cho phép tài khoản Google.
+4. Copy đường dẫn Web App vừa tạo dạng:
    `https://script.google.com/macros/s/AKfycb.../exec`
 
-### Bước 5: Kích hoạt trên Website
-Bạn có 2 cách cực kỳ đơn giản để kích hoạt:
-
-#### Cách 1 (Nhanh nhất - Ngay trên giao diện):
-- Mở trang web tại `http://localhost:3002`.
-- Nhấn tổ hợp phím **`Ctrl + Shift + L`** (hoặc bấm nút "Quản lý Lead & Cấu hình" ở cuối chân trang Footer).
-- Chuyển sang tab **Cấu hình Google Sheet** $\rightarrow$ Dán đường dẫn Web App vào ô và bấm **Lưu & Test Kết Nối**.
-
-#### Cách 2:
-- Mở file [data/config.json](file:///Users/dungbv/Documents/ThanhLapCongty/data/config.json).
-- Dán link vào trường `"googleSheetWebhookUrl"`:
-  ```json
-  {
-    "googleSheetWebhookUrl": "https://script.google.com/macros/s/AKfycb.../exec"
-  }
-  ```
-
----
-
-## DỮ LIỆU TỰ ĐỘNG THU THẬP VÀO GOOGLE SHEET GỒM:
-1. **Thời gian**: Ngày giờ khách gửi form chính xác đến từng giây (GMT+7).
-2. **Họ và tên**: Họ tên khách hàng đăng ký.
-3. **Số điện thoại**: Số điện thoại/Zalo để sale gọi tư vấn ngay.
-4. **Gói quan tâm**: Gói Cơ bản (1.5tr), Gói Vận hành (3.79tr), Gói VIP (5.49tr)...
-5. **Ngành nghề / Ghi chú**: Nhu cầu đặc thù của doanh nghiệp.
-6. **Nguồn UTM (UTM Source)**: Khách đến từ Facebook Ads, Google Ads, TikTok, Zalo hay Trực tiếp.
-7. **Chiến dịch UTM (UTM Campaign)**: Tên chiến dịch quảng cáo mang lại lead.
-8. **Đường dẫn**: Trang web hoặc vị trí form khách điền.
-9. **Thiết bị**: Mobile hay Desktop để tư vấn viên nắm bắt thói quen của khách.
-10. **Trạng thái**: Mặc định là `Mới nhận - Chưa gọi` để tiện quản lý phễu telesale.
-
----
-
-## CƠ CHẾ AN TOÀN CHỐNG MẤT LEAD:
-- Ngay cả khi Google Sheet gặp sự cố mạng, mọi lead đều được tự động lưu dự phòng trong file `data/leads.json` trên server và trong `localStorage` trên trình duyệt. Bạn sẽ không bao giờ bị thất thoát bất kỳ khách hàng tiềm năng nào!
+### Bước 5: Cấu hình vào Website hoặc Vercel
+- **Trên máy chủ / Cục bộ**: Mở file [data/config.json](file:///Users/dungbv/Documents/ThanhLapCongty/data/config.json), dán link vào `"googleSheetWebhookUrl"`.
+- **Trên Vercel**: Vào Settings > Environment Variables > Thêm biến `GOOGLE_SHEET_WEBHOOK_URL` với giá trị là link Web App trên.

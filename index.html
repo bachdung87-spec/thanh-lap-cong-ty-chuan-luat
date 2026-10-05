@@ -1505,14 +1505,10 @@
 
       </div>
 
-      <!-- Copyright & Admin Demo Trigger -->
+      <!-- Copyright -->
       <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
         <p>© 2026 CÔNG TY TNHH KẾ TOÁN THUẾ CHUẨN LUẬT. All Rights Reserved. MST: 0319213958.</p>
-        <div class="flex items-center gap-4">
-          <button onclick="openLeadInspector()" class="text-emerald-400/90 hover:text-emerald-300 transition flex items-center gap-1.5 text-xs font-semibold bg-emerald-950/60 px-3 py-1.5 rounded-lg border border-emerald-800/60 shadow-sm">
-            <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <span>Quản Lý Lead & Cấu Hình Google Sheet</span>
-          </button>
+        <div>
           <a href="#" class="text-slate-400 hover:text-white">Lên đầu trang ↑</a>
         </div>
       </div>
@@ -1614,136 +1610,7 @@
     </div>
   </div>
 
-  <!-- POPUP MODAL: LEAD INSPECTOR & CẤU HÌNH HỆ THỐNG -->
-  <div id="lead-inspector-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-brand-950/80 backdrop-blur-sm p-4">
-    <div class="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] flex flex-col border border-emerald-100">
-      
-      <!-- Modal Header -->
-      <div class="flex items-center justify-between pb-3.5 border-b border-slate-200 mb-4">
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Hệ Thống Quản Trị Chuẩn Luật</span>
-          </div>
-          <h3 class="font-extrabold text-lg text-slate-900 mt-0.5">Quản Trị Lead & Cấu Hình Google Sheet</h3>
-        </div>
-        <button onclick="closeLeadInspector()" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-xl hover:bg-slate-100 transition">✕</button>
-      </div>
 
-      <!-- Navigation Tabs -->
-      <div class="flex border-b border-slate-200 mb-4 gap-2 text-xs font-bold">
-        <button id="tab-btn-leads" onclick="switchAdminTab('leads')" class="py-2 px-3 border-b-2 border-emerald-700 text-emerald-800 flex items-center gap-1.5 transition">
-          <span>📋 Danh Sách Lead</span>
-          <span id="inspector-lead-badge" class="bg-emerald-100 text-emerald-800 text-[10px] px-1.5 py-0.5 rounded-full font-black">0</span>
-        </button>
-        <button id="tab-btn-sheet" onclick="switchAdminTab('sheet')" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 transition">
-          <span>📊 Kết Nối Google Sheet</span>
-          <span id="sheet-status-indicator" class="w-2 h-2 rounded-full bg-amber-400"></span>
-        </button>
-        <button id="tab-btn-packages" onclick="switchAdminTab('packages')" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 transition">
-          <span>💼 Cấu Hình Gói Dịch Vụ</span>
-        </button>
-      </div>
-
-      <!-- Tab Content 1: Leads List -->
-      <div id="admin-tab-leads" class="flex-1 flex flex-col overflow-hidden min-h-0">
-        <div class="flex items-center justify-between mb-3 text-xs">
-          <div class="text-slate-500">Dữ liệu được sao lưu realtime trên máy chủ và trình duyệt.</div>
-          <div class="flex items-center gap-2">
-            <button onclick="exportLeadsCsv()" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-lg flex items-center gap-1 transition">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-              Xuất CSV
-            </button>
-            <button onclick="refreshLeadsList()" class="px-2.5 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold rounded-lg flex items-center gap-1 transition">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-              Làm mới
-            </button>
-          </div>
-        </div>
-
-        <div id="inspector-leads-list" class="overflow-y-auto flex-1 divide-y divide-slate-100 pr-1 border border-slate-100 rounded-xl p-2 bg-slate-50/50">
-          <!-- Rendered dynamically -->
-        </div>
-      </div>
-
-      <!-- Tab Content 2: Google Sheet Config -->
-      <div id="admin-tab-sheet" class="hidden flex-1 overflow-y-auto pr-1 text-xs text-slate-700 space-y-4">
-        <div class="bg-emerald-50/70 border border-emerald-200/80 rounded-2xl p-4">
-          <div class="flex items-center gap-2 font-bold text-brand-900 mb-1">
-            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            Tự động bắn lead về Google Sheet của bạn
-          </div>
-          <p class="text-slate-600 leading-relaxed text-[11px]">
-            Hệ thống đã có sẵn file script <code class="bg-emerald-100 px-1 py-0.5 rounded text-emerald-900 font-mono">google-sheets/Code.gs</code>. 
-            Bạn chỉ cần mở Google Sheet &gt; Tiện ích mở rộng &gt; Apps Script &gt; Dán mã &gt; Triển khai dưới dạng Web App và dán URL vào bên dưới.
-          </p>
-        </div>
-
-        <div>
-          <label class="block font-bold text-slate-800 mb-1">Google Apps Script Web App URL:</label>
-          <div class="flex gap-2">
-            <input type="url" id="cfg-sheet-url" placeholder="https://script.google.com/macros/s/AKfycb.../exec" class="flex-1 h-11 px-3.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-700 text-xs outline-none bg-slate-50/60 font-mono">
-            <button onclick="saveSheetConfig()" class="h-11 px-4 bg-brand-800 hover:bg-brand-900 text-white font-bold rounded-xl transition flex items-center justify-center gap-1.5 shrink-0">
-              Lưu Cấu Hình
-            </button>
-          </div>
-          <p class="text-[11px] text-slate-400 mt-1">Cấu hình được lưu tự động vào file <code class="font-mono">data/config.json</code> trên máy chủ.</p>
-        </div>
-
-        <div class="border-t border-slate-100 pt-3">
-          <div class="flex items-center justify-between">
-            <div>
-              <span class="font-bold text-slate-800 block">Kiểm tra kết nối Webhook</span>
-              <span class="text-[11px] text-slate-500">Gửi thử 1 dòng dữ liệu mẫu vào Google Sheet để kiểm tra.</span>
-            </div>
-            <button id="btn-test-sheet" onclick="testSheetWebhook()" class="h-10 px-4 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-xl transition flex items-center justify-center gap-1.5 text-xs">
-              Bắn Thử 1 Lead Mẫu
-            </button>
-          </div>
-          <div id="test-sheet-feedback" class="mt-2 text-xs hidden"></div>
-        </div>
-
-        <div class="bg-slate-50 rounded-2xl p-3.5 border border-slate-200/80">
-          <h4 class="font-bold text-slate-800 mb-2">Các bước triển khai Google Sheet:</h4>
-          <ol class="list-decimal pl-4 space-y-1 text-[11px] text-slate-600">
-            <li>Tạo Google Sheet mới trên tài khoản Google của bạn.</li>
-            <li>Vào <strong>Tiện ích mở rộng &gt; Apps Script</strong>.</li>
-            <li>Copy nội dung file <code class="text-emerald-700 font-mono font-bold">google-sheets/Code.gs</code> dán vào.</li>
-            <li>Bấm <strong>Triển khai &gt; Triển khai mới &gt; Ứng dụng web</strong> (Execute as: <em>Tôi</em>, Who has access: <em>Bất kỳ ai</em>).</li>
-            <li>Copy URL dán vào ô bên trên và bấm <strong>Lưu Cấu Hình</strong>.</li>
-          </ol>
-        </div>
-      </div>
-
-      <!-- Tab Content 3: Packages Config -->
-      <div id="admin-tab-packages" class="hidden flex-1 overflow-y-auto pr-1 text-xs text-slate-700 space-y-4">
-        <div class="flex items-center justify-between">
-          <div>
-            <h4 class="font-bold text-slate-900 text-sm">Các Gói Dịch Vụ Đang Áp Dụng</h4>
-            <p class="text-slate-500 text-[11px]">Dữ liệu được quản lý tập trung tại file <code class="bg-slate-100 px-1 py-0.5 rounded text-brand-900 font-mono">data/packages.json</code>.</p>
-          </div>
-          <button onclick="reloadPackages()" class="px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold rounded-lg flex items-center gap-1 transition">
-            🔄 Tải Lại Gói
-          </button>
-        </div>
-
-        <div id="inspector-packages-list" class="space-y-3">
-          <!-- Rendered dynamically -->
-        </div>
-
-        <div class="bg-amber-50 border border-amber-200/80 rounded-2xl p-3 text-[11px] text-amber-900">
-          <strong>💡 Mẹo cho Quản trị viên:</strong> Bạn có thể mở file <code class="font-mono font-bold">data/packages.json</code> để sửa giá tiền, tên gói, quyền lợi hoặc thêm gói mới. Sau khi lưu, giao diện website sẽ tự động cập nhật ngay lập tức!
-        </div>
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="pt-3 border-t border-slate-200 mt-3 flex justify-between items-center text-xs">
-        <span class="text-slate-400">Phím tắt nhanh: <strong>Ctrl + Shift + L</strong></span>
-        <button onclick="closeLeadInspector()" class="h-9 px-4 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-xl font-bold flex items-center justify-center transition">Đóng</button>
-      </div>
-
-    </div>
-  </div>
 
   <!-- Scripts -->
   <script src="js/utm-tracker.js"></script>
