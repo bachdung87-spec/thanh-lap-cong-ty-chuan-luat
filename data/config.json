@@ -1,8 +1,8 @@
 {
-  "googleSheetWebhookUrl": "",
+  "googleSheetWebhookUrl": "https://script.google.com/macros/s/AKfycbzT_Pa8yhYm6uQ2WzBvUnLB4ZaqVdyvOFOSfjfYgJQThC91TMrzc5yYe8kwZeK2CzN9/exec",
   "autoBackupLocal": true,
   "emailNotification": "ketoanchuanluat@gmail.com",
   "companyName": "CÔNG TY TNHH KẾ TOÁN THUẾ CHUẨN LUẬT",
   "hotline": "0587949999",
-  "updatedAt": "2026-10-02T14:56:00.000Z"
+  "updatedAt": "2026-10-06T00:51:00.000Z"
 }
