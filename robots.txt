@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chuanluat.vn/sitemap.xml
+Sitemap: https://thanhlapdoanhnghiep.chuanluat.com/sitemap.xml
